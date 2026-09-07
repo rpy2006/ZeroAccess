@@ -1,0 +1,13 @@
+package com.zeroaccess;
+import android.app.AppOpsManager;
+import android.content.Context;
+import android.content.pm.*;
+import android.provider.Settings;
+import java.util.*;
+public class PermissionHelper {
+    public static boolean hasUsageStatsPermission(Context ctx){try{AppOpsManager o=(AppOpsManager)ctx.getSystemService(Context.APP_OPS_SERVICE);return o.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,android.os.Process.myUid(),ctx.getPackageName())==AppOpsManager.MODE_ALLOWED;}catch(Exception e){return false;}}
+    public static boolean isAccessibilityServiceEnabled(Context ctx){try{String s=Settings.Secure.getString(ctx.getContentResolver(),Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);return s!=null&&s.contains(ctx.getPackageName()+"/.ZeroAccessibilityService");}catch(Exception e){return false;}}
+    public static List<AppInfo> getInstalledApps(Context ctx){List<AppInfo> l=new ArrayList<>();PackageManager pm=ctx.getPackageManager();List<PackageInfo> pkgs;try{pkgs=pm.getInstalledPackages(PackageManager.GET_PERMISSIONS);}catch(Exception e){return l;}for(PackageInfo pi:pkgs){if(pi.applicationInfo==null||pi.packageName.equals(ctx.getPackageName()))continue;AppInfo a=new AppInfo();a.packageName=pi.packageName;a.appName=pm.getApplicationLabel(pi.applicationInfo).toString();a.isSystemApp=(pi.applicationInfo.flags&ApplicationInfo.FLAG_SYSTEM)!=0;try{a.icon=pm.getApplicationIcon(pi.packageName);}catch(Exception e){a.icon=pm.getDefaultActivityIcon();}if(pi.requestedPermissions!=null)for(String p:pi.requestedPermissions){if(p==null)continue;if(p.equals("android.permission.CAMERA"))a.hasCamera=true;if(p.equals("android.permission.RECORD_AUDIO"))a.hasMic=true;if(p.equals("android.permission.ACCESS_FINE_LOCATION")||p.equals("android.permission.ACCESS_COARSE_LOCATION"))a.hasLocation=true;if(p.equals("android.permission.READ_EXTERNAL_STORAGE")||p.equals("android.permission.WRITE_EXTERNAL_STORAGE")||p.equals("android.permission.READ_MEDIA_IMAGES"))a.hasStorage=true;if(p.equals("android.permission.READ_CONTACTS"))a.hasContacts=true;}l.add(a);}return l;}
+    public static int calcPrivacyScore(List<AppInfo> a){if(a.isEmpty())return 100;int r=0;for(AppInfo x:a)if(!x.isSystemApp&&x.getSensitivePermCount()>=2)r++;return Math.max(0,Math.min(100,100-(int)((r*1.0/a.size())*100)));}
+    public static int countAppsWithPerm(List<AppInfo> a,String p){int c=0;for(AppInfo x:a){switch(p){case"camera":if(x.hasCamera)c++;break;case"mic":if(x.hasMic)c++;break;case"location":if(x.hasLocation)c++;break;case"storage":if(x.hasStorage)c++;break;case"contacts":if(x.hasContacts)c++;break;}}return c;}
+}

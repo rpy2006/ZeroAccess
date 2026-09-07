@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PATH: app/src/main/res/layout/fragment_ram_monitor.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/black">
+
+    <!-- ── Header ─────────────────────────────────────────────────────── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingHorizontal="20dp">
+        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+            android:src="@drawable/ic_memory" android:layout_marginEnd="10dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="RAM Monitor"
+            android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold"/>
+        <ProgressBar android:id="@+id/scan_spinner"
+            android:layout_width="20dp" android:layout_height="20dp"
+            android:indeterminateTint="@color/accent_blue" android:visibility="gone"/>
+        <ImageView android:id="@+id/btn_refresh"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_search" android:padding="6dp"
+            android:layout_marginStart="8dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true" android:focusable="true"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+    <!-- ── Total RAM card ─────────────────────────────────────────────── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@color/surface"
+        android:padding="16dp" android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp" android:layout_marginBottom="12dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="SYSTEM RAM" android:textColor="@color/text_disabled"
+            android:textSize="10sp" android:letterSpacing="0.10" android:layout_marginBottom="12dp"/>
+
+        <!-- Used / Free row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/tv_ram_used"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="--" android:textColor="@color/text_primary"
+                    android:textSize="22sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Used" android:textColor="@color/text_disabled" android:textSize="10sp"/>
+            </LinearLayout>
+            <TextView android:id="@+id/tv_ram_pct_total"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="--%"
+                android:textColor="@color/accent_blue" android:textSize="28sp" android:textStyle="bold"
+                android:layout_marginHorizontal="12dp"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="end">
+                <TextView android:id="@+id/tv_ram_free"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="--" android:textColor="@color/text_primary"
+                    android:textSize="22sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Free" android:textColor="@color/text_disabled" android:textSize="10sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Total RAM bar -->
+        <FrameLayout android:layout_width="match_parent" android:layout_height="8dp"
+            android:background="@color/divider">
+            <View android:id="@+id/v_total_bar_fill"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:background="@color/accent_blue"/>
+        </FrameLayout>
+
+        <!-- Scan hint -->
+        <TextView android:id="@+id/tv_scan_hint"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Tap refresh to scan processes"
+            android:textColor="@color/text_disabled" android:textSize="11sp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- ── Kill All button ───────────────────────────────────────────── -->
+    <LinearLayout android:id="@+id/btn_kill_all"
+        android:layout_width="match_parent" android:layout_height="52dp"
+        android:orientation="horizontal" android:gravity="center"
+        android:background="@color/accent_red_surface"
+        android:layout_marginHorizontal="20dp" android:layout_marginBottom="12dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true" android:focusable="true">
+        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+            android:src="@drawable/ic_stop" android:layout_marginEnd="10dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="FORCE STOP ALL BACKGROUND"
+            android:textColor="@color/accent_red" android:textSize="13sp"
+            android:textStyle="bold" android:letterSpacing="0.04"/>
+    </LinearLayout>
+
+    <!-- ── Process list label ─────────────────────────────────────────── -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="BACKGROUND PROCESSES" android:textColor="@color/text_disabled"
+        android:textSize="10sp" android:letterSpacing="0.10"
+        android:paddingHorizontal="20dp" android:layout_marginBottom="8dp"/>
+
+    <!-- ── Process list ───────────────────────────────────────────────── -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_ram_apps"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:paddingHorizontal="20dp" android:paddingBottom="16dp" android:clipToPadding="false"/>
+
+</LinearLayout>

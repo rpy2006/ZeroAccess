@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/black" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:paddingHorizontal="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Settings" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginBottom="20dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PERMISSION CONTROL" android:textColor="@color/text_disabled" android:textSize="10sp" android:letterSpacing="0.10" android:paddingHorizontal="20dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:id="@+id/btn_master_block" android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center" android:background="@color/accent_red_surface"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="8dp"
+            android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+            <ImageView android:id="@+id/iv_block_icon" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_lock" android:layout_marginEnd="10dp"/>
+            <TextView android:id="@+id/tv_block_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="BLOCK ALL PERMISSIONS" android:textColor="@color/accent_red" android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.06"/>
+        </LinearLayout>
+        <TextView android:id="@+id/tv_block_status" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="All permissions currently allowed" android:textColor="@color/text_disabled"
+            android:textSize="11sp" android:gravity="center" android:layout_marginBottom="12dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingHorizontal="20dp" android:layout_marginBottom="24dp">
+            <LinearLayout android:id="@+id/btn_block_location" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:orientation="vertical" android:gravity="center" android:background="@color/surface" android:layout_marginEnd="5dp"
+                android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_location"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loc" android:textColor="@color/text_disabled" android:textSize="9sp"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_block_camera" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:orientation="vertical" android:gravity="center" android:background="@color/surface" android:layout_marginEnd="5dp"
+                android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_camera"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cam" android:textColor="@color/text_disabled" android:textSize="9sp"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_block_mic" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:orientation="vertical" android:gravity="center" android:background="@color/surface" android:layout_marginEnd="5dp"
+                android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_microphone"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mic" android:textColor="@color/text_disabled" android:textSize="9sp"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_block_contacts" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:orientation="vertical" android:gravity="center" android:background="@color/surface" android:layout_marginEnd="5dp"
+                android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_contacts"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cont" android:textColor="@color/text_disabled" android:textSize="9sp"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_block_storage" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:orientation="vertical" android:gravity="center" android:background="@color/surface"
+                android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_storage"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Stor" android:textColor="@color/text_disabled" android:textSize="9sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SYSTEM ACCESS" android:textColor="@color/text_disabled" android:textSize="10sp" android:letterSpacing="0.10" android:paddingHorizontal="20dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@color/surface" android:layout_marginHorizontal="20dp" android:layout_marginBottom="20dp">
+            <LinearLayout android:id="@+id/ll_usage_access" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_bar_chart" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Usage Access" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Track app usage statistics" android:textColor="@color/text_disabled" android:textSize="11sp"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tv_usage_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Disabled" android:textColor="@color/accent_red" android:textSize="11sp" android:textStyle="bold"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginHorizontal="14dp"/>
+            <LinearLayout android:id="@+id/ll_accessibility" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_accessibility" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Accessibility Service" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automate permission navigation" android:textColor="@color/text_disabled" android:textSize="11sp"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tv_accessibility_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Disabled" android:textColor="@color/accent_red" android:textSize="11sp" android:textStyle="bold"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginHorizontal="14dp"/>
+            <LinearLayout android:id="@+id/ll_notification" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_notification" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Notification Access" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Real-time alerts" android:textColor="@color/text_disabled" android:textSize="11sp"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tv_notification_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Disabled" android:textColor="@color/accent_red" android:textSize="11sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AUTOMATION" android:textColor="@color/text_disabled" android:textSize="10sp" android:letterSpacing="0.10" android:paddingHorizontal="20dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@color/surface" android:layout_marginHorizontal="20dp" android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_moon" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Night Mode Block" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="23:00 - 06:00" android:textColor="@color/text_disabled" android:textSize="11sp"/>
+                </LinearLayout>
+                <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/sw_night_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginHorizontal="14dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_work" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Work Mode" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:00 - 17:00" android:textColor="@color/text_disabled" android:textSize="11sp"/>
+                </LinearLayout>
+                <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/sw_work_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DEVELOPER" android:textColor="@color/text_disabled" android:textSize="10sp" android:letterSpacing="0.10" android:paddingHorizontal="20dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@color/surface" android:layout_marginHorizontal="20dp" android:layout_marginBottom="20dp">
+            <LinearLayout android:id="@+id/ll_instagram" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_instagram" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Instagram" android:textColor="@color/text_primary" android:textSize="13sp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@yadav_enterprises" android:textColor="@color/accent_blue" android:textSize="11sp"/>
+                </LinearLayout>
+                <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_chevron_right"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginHorizontal="14dp"/>
+            <LinearLayout android:id="@+id/ll_email" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true" android:longClickable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_mail" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Email" android:textColor="@color/text_primary" android:textSize="13sp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="yadaventerprises@gmail.com" android:textColor="@color/accent_blue" android:textSize="11sp"/>
+                </LinearLayout>
+                <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_chevron_right"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="APP" android:textColor="@color/text_disabled" android:textSize="10sp" android:letterSpacing="0.10" android:paddingHorizontal="20dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@color/surface" android:layout_marginHorizontal="20dp" android:layout_marginBottom="32dp">
+            <LinearLayout android:id="@+id/ll_about" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="14dp" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_info" android:layout_marginEnd="12dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="About ZeroAccess" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v1.0.0" android:textColor="@color/text_disabled" android:textSize="11sp"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginHorizontal="14dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="44dp" android:orientation="horizontal" android:gravity="center" android:paddingHorizontal="14dp">
+                <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_verified" android:layout_marginEnd="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No data leaves your device. Stored locally." android:textColor="@color/status_allowed" android:textSize="11sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

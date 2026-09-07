@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#0A0A0F</color>
+    <color name="surface">#0F0F1A</color>
+    <color name="surface_card">#0F0F1A</color>
+    <color name="surface_elevated">#141420</color>
+    <color name="divider">#141420</color>
+    <color name="text_primary">#F0F0F8</color>
+    <color name="text_secondary">#A0A8C0</color>
+    <color name="text_disabled">#3D4060</color>
+    <color name="accent_blue">#5B8DEF</color>
+    <color name="accent_blue_alpha">#1A5B8DEF</color>
+    <color name="accent_red">#E05A5A</color>
+    <color name="accent_red_alpha">#1AE05A5A</color>
+    <color name="accent_red_surface">#1A0808</color>
+    <color name="status_allowed">#22C55E</color>
+    <color name="status_allowed_alpha">#1A22C55E</color>
+    <color name="risk_high">#E05A5A</color>
+    <color name="risk_medium">#E8A440</color>
+    <color name="risk_medium_alpha">#1AE8A440</color>
+    <color name="risk_low">#22C55E</color>
+    <color name="perm_camera">#5B8DEF</color>
+    <color name="perm_microphone">#8B5CF6</color>
+    <color name="perm_location">#E8A440</color>
+    <color name="perm_storage">#22C4D0</color>
+    <color name="perm_contacts">#22C55E</color>
+    <color name="score_good">#22C55E</color>
+    <color name="score_fair">#E8A440</color>
+    <color name="score_poor">#E05A5A</color>
+    <color name="colorPrimary">#5B8DEF</color>
+    <color name="colorPrimaryDark">#0A0A0F</color>
+    <color name="colorAccent">#5B8DEF</color>
+</resources>
