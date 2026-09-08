@@ -4,6 +4,18 @@ A privacy and performance monitoring utility for Android. ZeroAccess gives you c
 
 ---
 
+<p align="center">
+  <a href="https://github.com/rpy2006/ZeroAccess/releases/download/ZeroAccess/ZeroAccess-v1.0.0.apk">
+    <img src="https://img.shields.io/badge/⬇%20Download%20APK-v1.0.0-5B8DEF?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" height="48"/>
+  </a>
+</p>
+
+<p align="center">
+  <strong>Android 8.0+ required &nbsp;|&nbsp; Enable "Install from unknown sources" before installing</strong>
+</p>
+
+---
+
 ## Features
 
 ### Privacy Monitor
@@ -116,7 +128,17 @@ ZeroAccess/
 
 ## Setup
 
-### Requirements
+### Install (Quick)
+
+Download and install the APK directly on your Android device:
+
+<a href="https://github.com/rpy2006/ZeroAccess/releases/download/ZeroAccess/ZeroAccess-v1.0.0.apk">
+  👉 ZeroAccess-v1.0.0.apk
+</a>
+
+### Build from Source
+
+#### Requirements
 - Android device running API 26+ (Android 8.0 Oreo or higher)
 - AndroidIDE or Android Studio
 
