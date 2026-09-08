@@ -197,7 +197,7 @@ Dark-only UI. All icons are self-contained vector XML drawables — no font depe
 ## Developer
 
 **Rohit Prasad Yadav**
-- Instagram: [@rohiit.md](https://www.instagram.com/rohiit.md)
+- Instagram: [@yadav_enterprises](https://www.instagram.com/rohit.md)
 - Email: rohitprasadyadav06@gmail.com
 
 ---
